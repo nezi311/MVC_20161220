@@ -1,0 +1,32 @@
+#włączenie mod_rewrite
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^Categories/?$ index.php?controller=Categories [L]
+RewriteRule ^Categories/showone/(\d+)/?$ index.php?controller=Categories&action=showone&id=$1 [L]
+RewriteRule ^Categories/install/?$ index.php?controller=Categories&action=install [L]
+RewriteRule ^Categories/delete/(\d+)/?$ index.php?controller=Categories&action=delete&id=$1 [L]
+RewriteRule ^Categories/add/?$ index.php?controller=Categories&action=add [L]
+RewriteRule ^Categories/insert/?$ index.php?controller=Categories&action=insert [L]
+
+
+RewriteRule ^Autor/?$ index.php?controller=Autor [L]
+RewriteRule ^Autor/showone/(\d+)/?$ index.php?controller=Autor&action=showone&id=$1 [L]
+RewriteRule ^Autor/delete/(\d+)/?$ index.php?controller=Autor&action=delete&id=$1 [L]
+RewriteRule ^Autor/add/?$ index.php?controller=Autor&action=add [L]
+RewriteRule ^Autor/insert/?$ index.php?controller=Autor&action=insert [L]
+
+
+RewriteRule ^Ksiazka/?$ index.php?controller=Ksiazka [L]
+RewriteRule ^Ksiazka/showone/(\d+)/?$ index.php?controller=Ksiazka&action=showone&id=$1 [L]
+RewriteRule ^Ksiazka/delete/(\d+)/?$ index.php?controller=Ksiazka&action=delete&id=$1 [L]
+RewriteRule ^Ksiazka/year/?$ index.php?controller=Ksiazka&action=year [L]
+RewriteRule ^Ksiazka/add/?$ index.php?controller=Ksiazka&action=add [L]
+RewriteRule ^Ksiazka/insert/?$ index.php?controller=Ksiazka&action=insert [L]
+
+RewriteRule ^Baza/?$ index.php?controller=Baza [L]
+
+ErrorDocument 404 http://localhost/Lab7/errors/404.html
